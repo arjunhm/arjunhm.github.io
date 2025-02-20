@@ -1,8 +1,8 @@
 name: Build Astro (Develop)
 
 on:
-  push:
-    branches: [develop]
+  # push:
+  #   branches: [develop]
   workflow_dispatch:
 
 jobs:
