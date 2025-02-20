@@ -81,4 +81,4 @@ export const NAV_LINKS: Array<keyof typeof nav[SupportedLanguage]> = [
   "home", "about", "blog", "projects"
 ];
 
-export const ABOUT_ME: string = "backend engineer. working on databases."
+export const ABOUT_ME: string = "backend engineer. exploring systems and databases."
