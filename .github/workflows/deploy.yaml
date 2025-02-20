@@ -12,24 +12,26 @@ permissions:
   id-token: write
 
 jobs:
-  build-and-deploy:
+  build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
+      - name: Checkout your repository using git
         uses: actions/checkout@v4
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
+      - name: Install, build, and upload your site
+        uses: withastro/action@v4
         with:
+          path: . 
           node-version: 20
+          package-manager: pnpm@latest 
 
-      - name: Install dependencies
-        run: npm install
-
-      - name: Build Astro site
-        run: npm run build
-
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
       - name: Deploy to GitHub Pages
+        id: deployment
         uses: actions/deploy-pages@v4
-        with:
-          path: dist/
+
