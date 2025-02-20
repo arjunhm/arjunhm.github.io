@@ -40,38 +40,6 @@ export default {
             text: "Series",
             slug: "series"
         }
-    },
-    "es": {
-        "home": {
-            text: "Página Principal",
-            slug: ""
-        },
-        "about": {
-            text: "Acerca De",
-            slug: "about"
-        },
-        "blog": {
-            text: "Blog",
-            slug: "blog",
-            route: "/blog/pages/1"
-        },
-        "projects": {
-            text: "Proyectos",
-            slug: "projects",
-            route: "/projects/pages/1"
-        },
-        "archive": {
-            text: "Archivo",
-            slug: "archive"
-        },
-        "tags": {
-            text: "Etiquetas",
-            slug: "tags"
-        },
-        "series": {
-            text: "Serie",
-            slug: "series"
-        }
     }
 } as const satisfies TranslationNavEntries;
 
