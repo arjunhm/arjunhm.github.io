@@ -7,7 +7,8 @@ import tailwind from "@astrojs/tailwind";
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://astro-theme-cody.netlify.app',
+  site: 'https://arjunhm.github.io',
+  // base: 'arjunhm.github.io',
   integrations: [mdx(), sitemap(), tailwind()],
   // NOTE: Make sure this matches your supported languages in the file: src/consts.ts
   i18n: {

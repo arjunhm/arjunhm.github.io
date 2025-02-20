@@ -10,6 +10,7 @@ import {
 } from "@/utils";
 import type { CollectionEntry } from "astro:content";
 import { Icon } from "astro-icon";
+import {ABOUT_ME} from "src/consts";
 
 const MAX_POSTS = 10;
 const allPosts = await getAllPosts();
@@ -36,7 +37,7 @@ const tech: Array<{ title: string; desc: string }> = [
   <section>
     <div>
       <h1 class="title">Arjun Handli</h1>
-      <p class="mb-4 sm:mb-8">i get bored easily. so i automate.</p>
+      <p class="mb-4 sm:mb-8">{ABOUT_ME}</p>
     </div>
     <div>
       <h1 class="title">Contact</h1>
