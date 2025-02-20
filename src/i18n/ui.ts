@@ -5,7 +5,6 @@
  * default language for any entries that haven't been translated 
  */
 import type { SupportedLanguage } from "src/utils/i18n";
-import { ABOUT_ME } from "src/consts"
 
 export default {
     "en": {
@@ -16,7 +15,7 @@ export default {
             text: "site description"
         },
         "profile.description": {
-            text: ABOUT_ME
+            text: "backend engineer. working on databases."
         },
         "blog.lastUpdated": {
             text: "Last updated:"
