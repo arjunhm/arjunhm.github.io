@@ -18,6 +18,9 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - name: Clear NPM Cache
+        run: npm cache clean --force
+        
       - name: Checkout your repository using git
         uses: actions/checkout@v4
 
