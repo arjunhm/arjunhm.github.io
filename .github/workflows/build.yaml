@@ -22,3 +22,9 @@ jobs:
 
       - name: Build Astro site
         run: npm run build
+
+      - name: Save dist/ as artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: build-artifact
+          path: dist/
