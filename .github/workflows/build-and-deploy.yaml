@@ -3,8 +3,8 @@ name: Build and Deploy Astro to GitHub Pages
 on:
   push:
     branches:
-      - develop  # Only build for develop
-      - main     # Build and deploy for main
+      - develop  # Build on develop
+      - main     # Build and deploy on main
   workflow_dispatch:
 
 permissions:
@@ -15,7 +15,6 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/develop' || github.ref == 'refs/heads/main'
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -34,12 +33,12 @@ jobs:
       - name: Save dist/ as artifact
         uses: actions/upload-artifact@v4
         with:
-          name: build-artifact
+          name: github-pages
           path: dist/
 
   deploy:
     runs-on: ubuntu-latest
-    needs: build  # Ensure deploy runs only if build succeeds
+    needs: build  # Deploy only if build succeeds
     if: github.ref == 'refs/heads/main'  # Deploy only on main branch
     steps:
       - name: Checkout repository
@@ -48,7 +47,7 @@ jobs:
       - name: Download build artifact from build job
         uses: actions/download-artifact@v4
         with:
-          name: build-artifact
+          name: github-pages
 
       - name: Deploy to GitHub Pages
         id: deployment
